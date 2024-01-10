@@ -16,6 +16,7 @@ use Pterodactyl\Http\Middleware\Api\Client\Server\AuthenticateServerAccess;
 | Endpoint: /api/client
 |
 */
+
 Route::get('/', [Client\ClientController::class, 'index'])->name('api:client.index');
 Route::get('/permissions', [Client\ClientController::class, 'permissions']);
 
@@ -27,8 +28,8 @@ Route::prefix('/account')->middleware(AccountSubject::class)->group(function () 
         Route::delete('/two-factor', [Client\TwoFactorController::class, 'delete']);
     });
 
-    Route::put('/email', [Client\AccountController::class, 'updateEmail'])->name('api:client.account.update-email');
-    Route::put('/password', [Client\AccountController::class, 'updatePassword'])->name('api:client.account.update-password');
+    //Route::put('/email', [Client\AccountController::class, 'updateEmail'])->name('api:client.account.update-email');
+    //Route::put('/password', [Client\AccountController::class, 'updatePassword'])->name('api:client.account.update-password');
 
     Route::get('/activity', Client\ActivityLogController::class)->name('api:client.account.activity');
 

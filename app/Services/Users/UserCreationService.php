@@ -7,7 +7,7 @@ use Pterodactyl\Models\User;
 use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Contracts\Auth\PasswordBroker;
-use Pterodactyl\Notifications\AccountCreated;
+//use Pterodactyl\Notifications\AccountCreated;
 use Pterodactyl\Contracts\Repository\UserRepositoryInterface;
 
 class UserCreationService
@@ -51,7 +51,7 @@ class UserCreationService
         }
 
         $this->connection->commit();
-        $user->notify(new AccountCreated($user, $token ?? null));
+        //$user->notify(new AccountCreated($user, $token ?? null));
 
         return $user;
     }
