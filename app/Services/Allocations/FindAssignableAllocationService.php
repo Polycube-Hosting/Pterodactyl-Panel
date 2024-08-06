@@ -41,6 +41,9 @@ class FindAssignableAllocationService
             throw new AutoAllocationNotEnabledException();
         }
 
+        Assert::integerish($start);
+        Assert::integerish($end);
+
         /** @var \Pterodactyl\Models\Allocation|null $allocation */
         $allocation = $server->node->allocations()
             ->where('ip', $server->allocation->ip)
