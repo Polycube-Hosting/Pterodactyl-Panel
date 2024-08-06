@@ -108,7 +108,7 @@ Route::group([
         Route::get('/allocations', [Client\Servers\NetworkAllocationController::class, 'index']);
         Route::post('/allocations', [Client\Servers\NetworkAllocationController::class, 'store']);
         Route::post('/allocations/{allocation}', [Client\Servers\NetworkAllocationController::class, 'update']);
-        Route::post('/allocations/{allocation}/primary', [Client\Servers\NetworkAllocationController::class, 'setPrimary']);
+        //Route::post('/allocations/{allocation}/primary', [Client\Servers\NetworkAllocationController::class, 'setPrimary']);
         Route::delete('/allocations/{allocation}', [Client\Servers\NetworkAllocationController::class, 'delete']);
     });
 
